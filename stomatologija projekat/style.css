@@ -193,6 +193,28 @@ main {
   transform: scale(1.1);
 }
 
+.top-button {
+  width: 10rem;
+  height: 2rem;
+  margin-top: 1rem;
+    border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: #115b69;
+  font-size: 1rem;
+  font-family: sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px 3px;
+}
+
+.top-button:hover {
+  transform: scale(1.05);
+  color: white;
+  background-color: #115b69;
+  border: 1px solid #474747;
+}
+
 .mini-top-text-link {
   display: flex;
   flex-direction: row;
