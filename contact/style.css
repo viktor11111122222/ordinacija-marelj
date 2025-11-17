@@ -1,0 +1,252 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(/stomatology.project/public/a0d70b35-f7f4-4614-9809-0ab08638ea93.png);
+}
+
+.tooth {
+  color: rgb(214, 214, 214);
+}
+
+/* upper nav */
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5rem;
+  padding: 0.3rem;
+  position: sticky;
+  top: 0%;
+  border-bottom: 1px solid black;
+  /* background-color: rgb(250, 250, 250); */
+  background: url(/stomatology.project/public/a0d70b35-f7f4-4614-9809-0ab08638ea93.png);
+  background-size: contain;
+}
+
+.media-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 1rem;
+  color: rgb(53, 51, 51);
+}
+
+.media-animate {
+  transition: 0.2s;
+}
+
+.media-animate:hover {
+  transform: scale(1.2);
+}
+
+.media-shadow {
+  box-shadow: 1px 1px 50px 1px rgb(221, 221, 221);
+}
+
+.header-top-text {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding-inline: 1rem;
+  padding-block: 5px;
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.header-top-text:hover {
+  transform: scale(0.9);
+}
+
+.link-header-top-text {
+  text-decoration: none;
+}
+
+.contact-top-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* constantly in use */
+
+.text-decoration {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* thickness of underline */
+  text-underline-offset: 6px; /* distance below text */
+  text-decoration-color: rgb(99, 92, 92);
+}
+
+.primar-color {
+  /* color: #00B4D8; */
+  color: #115b69;
+}
+
+.main-color {
+  color: #333333;
+}
+
+.secundary-color {
+  color: #006399;
+}
+
+.end-text {
+  color: #F8F9FA;
+}
+
+.main-secondary-color {
+  color: #474747;
+}
+
+.links {
+  text-decoration: none;
+}
+
+/* nav */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #F8F9FA;
+}
+
+.nav-container {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 10rem;
+  width: 100%;
+}
+
+.nav-container-text {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-text {
+  transition: 0.3s;
+}
+
+.nav-text:hover {
+  transform: scale(0.9);
+}
+
+.tooth-photo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-left: 8rem;
+  transition: 0.2s;
+}
+
+.tooth-photo-container:hover {
+  transform: scale(0.9)
+}
+
+.tooth-photo {
+  display: flex;
+  justify-content: start;
+  width: 5rem;                                                                                                                                                                                                                                                                                                                      
+}
+
+/* start of main */
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  /* margin: 2rem; */
+  color: #115b69;
+  box-shadow: 2px 5px 10px 3px ;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.map-text-holder {
+padding-bottom: 2rem;
+}
+
+.map-wrap {
+  color: #00466b;
+  z-index: 1000;
+  box-shadow: 0 2px 15px 1px;
+}
+
+.contact-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid red; */
+  box-shadow: 3px 3px 20px 2px;
+  color: #00466b;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-email {
+  width: 95%;
+  color: #00466b;
+}
+
+.contact-link {
+  color: #115b69;
+}
+
+.email-button {
+  padding: 5px 15px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 0 #000;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.email-button:hover {
+  transform: translateY(1px);
+  box-shadow: 0 5px 0 #222;
+}
+
+.email-button:active {
+  box-shadow: 0 2px 0 #000;
+  transform: translateY(4px);
+}
+
+.contact-shadow-box {
+  box-shadow: 2px 5px 15px 3px;
+  padding: 1rem;
+
+}
