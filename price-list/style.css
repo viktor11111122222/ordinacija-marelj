@@ -172,128 +172,34 @@ nav {
 
 /* start of main */
 
-main {
+.main-container {
   display: flex;
-  justify-content: space-evenly;
-  margin: 2rem;
-}
-
-.map-container {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  /* margin: 2rem; */
-  color: #115b69;
-  box-shadow: 2px 5px 10px 3px ;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  margin: 1rem;
+  gap: 1rem;
 }
 
-.map-text-holder {
-padding-bottom: 2rem;
-}
-
-.map-wrap {
-  color: #00466b;
-  z-index: 1000;
-  box-shadow: 0 2px 15px 1px;
-  border-radius: 15px;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  width: 350px;
+  height: 450px;
   overflow: hidden;
-  transition: 0.2s;
+  border: 1px solid red;
 }
 
-.map-wrap:hover {
-  transform: scale(1.01);
-}
-
-.contact-holder {
+.light-bulb-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  /* border: 1px solid red; */
-  box-shadow: 3px 3px 20px 2px;
-  color: #00466b;
-  padding: 1rem;
-  border-radius: 20px;
-  backdrop-filter: blur(3px);
-  margin: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgb(255, 208, 0);
+  box-shadow: 50px 200px 450px 130px;
+  font-size: 1.5rem;
+  padding: 5px;
 }
 
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  border-radius: 15px;
-  transition: 0.1s;
-  width: 95%;
-}
-
-.contact-container:hover {
-  transform: scale(1.02);
-  box-shadow: 5px 5px 15px 5px;
-}
-
-.contact-email {
-  width: 95%;
-  color: #00466b;
-  border-radius: 15px;
-  transition: 0.1s;
-}
-
-.contact-email:hover {
-  transform: scale(1.02);
-  box-shadow: 5px 5px 15px 5px;
-}
-
-.contact-link {
-  color: #115b69;
-}
-
-.email-button {
-  padding: 5px 15px;
-  background: #115b69;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 6px 0  #00466b;
-  cursor: pointer;
-  transition: 0.15s;
-}
-
-.email-button:hover {
-  transform: translateY(1px);
-  box-shadow: 0 5px 0 #003755;
-}
-
-.email-button:active {
-  box-shadow: 0 2px 0 #002a41;
-  transform: translateY(4px);
-}
-
-.contact-shadow-box {
-  box-shadow: 2px 5px 15px 3px;
-  padding: 1rem;
-}
-
-.location-container {
-  display: flex;
-  flex-direction: column;
-  border-radius: 15px;
-  transition: 0.1s;
-  width: 95%;
-}
-
-.location-container:hover {
-  transform: scale(1.02);
-  box-shadow: 5px 5px 15px 5px;
-  transition: 0.1;
-}
-
-.location-container button {
-  margin-block: 5px;
+.card-1 {
+  
 }
