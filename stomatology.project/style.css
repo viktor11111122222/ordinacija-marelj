@@ -22,7 +22,7 @@ body {
   padding: 0.3rem;
   position: sticky;
   top: 0%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(0, 44, 85);
   /* background-color: rgb(250, 250, 250); */
   background: url(public/a0d70b35-f7f4-4614-9809-0ab08638ea93.png);
   background-size: contain;
