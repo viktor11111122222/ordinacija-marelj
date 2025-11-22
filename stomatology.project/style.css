@@ -61,7 +61,7 @@ body {
   box-shadow: 0px 0px 5px 1px;
   cursor: pointer;
   transition: 0.2s;
-  color: rgb(22, 154, 167);
+  color: #10a2ce;
 }
 
 .header-top-text:hover {
@@ -247,7 +247,7 @@ main {
 
 .main-top-img-container:hover {
   transform: scale(1.01);
-  box-shadow: gray 2px 2px 10px 5px;
+  box-shadow: rgb(17, 120, 129) 0px 0px 30px 2px;
 }
 
 .main-top-img {

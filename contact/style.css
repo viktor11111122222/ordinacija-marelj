@@ -63,6 +63,7 @@ body {
   box-shadow: 1px 1px 5px 1px;
   cursor: pointer;
   transition: 0.2s;
+  color: #10a2ce;
 }
 
 .header-top-text:hover {
