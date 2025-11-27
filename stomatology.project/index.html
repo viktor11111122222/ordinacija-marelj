@@ -18,6 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -29,8 +32,8 @@
         </div>
         <div class="z-above link-container">
           <a class="link-custom" href="#">Pocetna</a>
-          <a class="link-custom" href="#">O Nama</a>
-          <a class="link-custom" href="#">Usluge</a>
+          <a class="link-custom" href="#o-nama">O Nama</a>
+          <a class="link-custom" href="#nase-usluge">Usluge</a>
           <a class="link-custom" href="#">Cenovnik</a>
           <a class="link-custom" href="#">Kontakt</a>
         </div>
@@ -46,8 +49,11 @@
             razumevanje i jasnu komunikaciju. <br> Naš cilj je vaš zdrav osmeh 
             koji traje ceo život.
           </p>
-          <a class="no-decoration button-container" href="/"><button class="family-playfair align-left hero-button">Zakazi termin</button></a>
+          <div class="button-cards-container">
+            <a class="no-decoration button-container" href="/"><button class="family-playfair align-left hero-button">Zakaži termin</button></a>
+            <a class="no-decoration button-container" href="#nase-usluge"><button class="family-playfair align-left hero-button">Naše usluge</button></a>
           </div>
+        </div>
         </section>
         <div class="arrow-container">
           <i class="fa-solid fa-arrow-down arrow"></i>
@@ -55,23 +61,59 @@
     </nav>
   <header>
   <main>
+    <div class="welcome-container family-rubik">
+      <h1 class="h1-shadow-decoration">Dobrodošli u Ordinaciju dr.Andjela Marelj</h1>
+    </div>
+    <div class="section-title-container family-rubik" id="o-nama">
+      <h2 class="h2-text-decoration mini-tittle">o nama</h2>
+    </div>
     <section class="about-us-section">
       <div class="about-us-image-container">
         <img src="public/andjela12.jpg" alt="Andjela Marelj">
       </div>
       <div class="about-us-text-container family-rubik">
-        <h1>O meni</h1>
-        <p>Kao vlasnik i jedini stomatolog u ordinaciji, svakom pacijentu pristupam potpuno posvećeno i sa pažnjom. Trudim se da svako oseća sigurnost, profesionalnost i toplu, jasnu komunikaciju tokom svakog tretmana.</p>
+        <h1 class="mini-tittle">O meni</h1>
+        <p class="paragraph-color">Kao vlasnik i jedini stomatolog u ordinaciji, svakom pacijentu pristupam potpuno posvećeno i sa pažnjom. Trudim se da svako oseća sigurnost, profesionalnost i toplu, jasnu komunikaciju tokom svakog tretmana.</p>
         <div class="moto-list">
-          <h2>Moj moto</h2>
+          <h2 class="mini-tittle">Moj moto</h2>
           <div class="moto-items">
-            <li>“Pacijent uvek dolazi prvi.”</li>
-            <li>“Zdrav osmeh počinje poverenjem.”</li>
-            <li>“Briga, preciznost i posvećenost.”</li>
+            <li class="paragraph-color">“Pacijent uvek dolazi prvi.”</li>
+            <li class="paragraph-color">“Zdrav osmeh počinje poverenjem.”</li>
+            <li class="paragraph-color">“Briga, preciznost i posvećenost.”</li>
           </div>
         </div>
-        <h2>Iskustvo</h2>
-        <p>Sa više od 20 godina iskustva u stomatologiji, trudim se da svakom pacijentu pružim sigurnu i kvalitetnu negu.</p>
+        <h2 class="mini-tittle">Iskustvo</h2>
+        <p class="paragraph-color">Sa više od 20 godina iskustva u stomatologiji, trudim se da svakom pacijentu pružim sigurnu i kvalitetnu negu.</p>
+      </div>
+    </section>
+    <div class="section-title-card family-rubik" id="nase-usluge">
+      <div>
+        <h1 class="h1-shadow-decoration">Nase Stomatoloske Usluge</h1>
+      </div>
+      <div>
+        <h2 class="h2-text-decoration mini-tittle">nase usluge</h2>
+      </div>
+    </div>
+    <section class="teeth-whitening-section family-rubik">
+      <div class="teeth-whitening-text-container">
+        <h2 class="mini-tittle">Profesionalno izbeljivanje za blistav i prirodno svetao osmeh</h2>
+        <p class="paragraph-color">
+          Izbeljivanje u našoj ordinaciji je brzo, sigurno i daje <br> vidljive rezultate već nakon jedne posete. Vaš osmeh <br> postaje odmah svetliji i svežiji.
+        </p>
+      </div>
+      <div class="teeth-whitening-image-container">
+        <img src="public/teeth whitening.png" alt="teeth whitening">
+      </div>
+    </section>
+    <section class="ultrasonic-teeth-cleaning-card">
+      <div class="ultrasoni-teeth-cleaning-image-container">
+        <img src="public/ultrasonic-teeth-cleaning.png" alt="">
+      </div>
+      <div class="ultrasonic-teeth-cleaning-text-container">
+        <h2 class="mini-tittle">Ultrazvučno skidanje kamenca za zdrav i svež osmeh</h2>
+        <p class="paragraph-color">
+          Ultrazvučno čišćenje bezbolno uklanja naslage i kamenac, ostavljajući zube glatkima i čistima. Tretman je brz, efikasan i ključan za zdravlje desni i svež dah.
+        </p>
       </div>
     </section>
   </main>
