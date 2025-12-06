@@ -251,8 +251,7 @@
             </div>
           </div>
         </div>
-        <div class="right-wrap">
-          <!-- future content Poruka -->
+        <!-- <div class="right-wrap">
           <div class="message-tittle">
             <h1>Posaljite nam poruku</h1>
           </div>
@@ -264,7 +263,7 @@
               <div class="input-container"><input class="input-1" type="text" placeholder="Prezime"></div>
             </div>
             <div class="message-card">
-              <div class="input-container"><input class="input-1" type="text" placeholder="Email Adresa"></div>
+              <div class="input-container"><input class="input-1" type="email" placeholder="Email Adresa"></div>
             </div>
             <div class="message-card">
               <div class="input-container"><input class="input-1" type="text" placeholder="Broj Telefona"></div>
@@ -274,9 +273,57 @@
             </div>
           </div>
           <div class="send-button-container">
-            <a href="/"><button class="send-button">Posalji poruku</button></a>
+            <a href="/"><button type="submit" class="send-button">Posalji poruku</button></a>
           </div>
-        </div>
+        </div> -->
+        <div class="right-wrap">
+
+  <div class="message-tittle">
+    <h1>Posaljite nam poruku</h1>
+  </div>
+
+  <div class="message-container" id="contactForm">
+
+    <div class="message-card">
+      <div class="input-container">
+        <input id="ime" class="input-1" type="text" placeholder="Vaše Ime" required>
+      </div>
+    </div>
+
+    <div class="message-card">
+      <div class="input-container">
+        <input id="prezime" class="input-1" type="text" placeholder="Prezime" required>
+      </div>
+    </div>
+
+    <div class="message-card">
+      <div class="input-container">
+        <input id="email" class="input-1" type="email" placeholder="Email Adresa" required>
+      </div>
+    </div>
+
+    <div class="message-card">
+      <div class="input-container">
+        <input id="telefon" class="input-1" type="text" placeholder="Broj Telefona">
+      </div>
+    </div>
+
+    <div class="message-card">
+      <div class="input-container">
+        <textarea id="poruka" class="custom-message-area input-1" placeholder="Poruka" required></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="send-button-container">
+    <button id="sendBtn" class="send-button">Pošalji Poruku</button>
+  </div>
+
+  <div id="status"></div>
+
+</div>
+
       </section>
       <div class="bottom-footer">
         <div class="fast-links-container">
@@ -300,5 +347,54 @@
       </div>
     </section>
   </footer>
+
+
+  <!-- Novi SDK link -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+  // INIT EmailJS sa PUBLIC KEY iz dashboard-a
+  emailjs.init({ publicKey: "4FrHcttWWMAg0A32b" });
+
+  document.getElementById("sendBtn").addEventListener("click", function() {
+    const status = document.getElementById("status");
+
+    const params = {
+      ime: document.getElementById("ime").value,
+      prezime: document.getElementById("prezime").value,
+      email: document.getElementById("email").value,
+      telefon: document.getElementById("telefon").value,
+      poruka: document.getElementById("poruka").value
+    };
+
+    // osnovna validacija
+    if (!params.ime || !params.email || !params.poruka) {
+      status.innerText = "Molimo popunite ime, email i poruku.";
+      return;
+    }
+
+    // slanje email-a
+    emailjs.send("service_1gyo6tm", "template_li7ram7", params)
+      .then(() => {
+        // status.innerText = "Uspešno poslato!";
+        document.getElementById("ime").value = "";
+        document.getElementById("prezime").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("telefon").value = "";
+        document.getElementById("poruka").value = "";
+      })
+      .catch(err => {
+        // ako je invalid grant, javlja da reconnectuje Gmail
+        if (err && err.text && err.text.includes("Invalid grant")) {
+          status.innerText = "Gmail token je istekao. Molimo reconnect-ujte Gmail nalog u EmailJS dashboard-u.";
+        } else {
+          status.innerText = "Greška: " + JSON.stringify(err);
+        }
+      });
+  });
+</script>
+
 </body>
 </html>
