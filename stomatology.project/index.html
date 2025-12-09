@@ -38,22 +38,22 @@
           <a class="link-custom" href="#kontakt">Kontakt</a>
         </div>
       </section>
-        <section class="z-above hero-text-container">
+        <section class="z-above hero-text-container reveal">
           <div class="hero-text-box">
-            <h2 style="font-size: 2rem;" class="family-playfair align-left">VREME JE ZA</h2>
-          <h1 style="font-size: 3rem;" class="family-playfair align-left">SAVRSEN OSMEH</h1>
-          <p class="family-playfair hero-paragraph align-left">
-            Naša ordinacija je mesto gde se svaki pacijent oseća
-            dobrodošlo <br> — bez straha i neprijatnosti.  
-            Pružamo pažljivu negu za <br> decu i odrasle, uz strpljenje, 
-            razumevanje i jasnu komunikaciju. <br> Naš cilj je vaš zdrav osmeh 
-            koji traje ceo život.
-          </p>
-          <div class="button-cards-container">
-            <a class="no-decoration button-container" href="#kontakt"><button class="family-playfair align-left hero-button">Zakaži termin</button></a>
-            <a class="no-decoration button-container" href="#nase-usluge"><button class="family-playfair align-left hero-button">Naše usluge</button></a>
+              <h2 style="font-size: 2rem;" class="family-playfair align-left">VREME JE ZA</h2>
+            <h1 style="font-size: 3rem;" class="family-playfair align-left">SAVRSEN OSMEH</h1>
+            <p class="family-playfair hero-paragraph align-left">
+              Naša ordinacija je mesto gde se svaki pacijent oseća
+              dobrodošlo <br> — bez straha i neprijatnosti.  
+              Pružamo pažljivu negu za <br> decu i odrasle, uz strpljenje, 
+              razumevanje i jasnu komunikaciju. <br> Naš cilj je vaš zdrav osmeh 
+              koji traje ceo život.
+            </p>
+            <div class="button-cards-container">
+              <a class="no-decoration button-container" href="#kontakt"><button class="family-playfair align-left hero-button">Zakaži termin</button></a>
+              <a class="no-decoration button-container" href="#nase-usluge"><button class="family-playfair align-left hero-button">Naše usluge</button></a>
+            </div>
           </div>
-        </div>
         </section>
         <div class="arrow-container">
           <i class="fa-solid fa-arrow-down arrow"></i>
@@ -65,9 +65,9 @@
       <h1 class="h1-shadow-decoration">Dobrodošli u Ordinaciju dr.Andjela Marelj</h1>
     </div>
     <div class="section-title-container family-rubik" id="o-nama">
-      <h2 class="h2-text-decoration mini-tittle">o nama</h2>
+      <h2 class="h2-text-decoration mini-tittle about-us-tittle">o nama</h2>
     </div>
-    <section class="about-us-section">
+    <section class="about-us-section reveal">
       <div class="about-us-image-container">
         <img src="public/andjela12.jpg" alt="Andjela Marelj">
       </div>
@@ -94,7 +94,7 @@
         <h2 class="h2-text-decoration mini-tittle">nase usluge</h2>
       </div>
     </div>
-    <section class="teeth-whitening-section family-rubik">
+    <section class="teeth-whitening-section family-rubik reveal">
       <div class="teeth-whitening-text-container">
         <h2 class="mini-tittle">Profesionalno izbeljivanje za blistav i prirodno svetao osmeh</h2>
         <p class="paragraph-color">
@@ -105,7 +105,7 @@
         <img src="public/teeth whitening.png" alt="teeth whitening">
       </div>
     </section>
-    <section class="ultrasonic-teeth-cleaning-card">
+    <section class="ultrasonic-teeth-cleaning-card reveal">
       <div class="ultrasoni-teeth-cleaning-image-container">
         <img src="public/ultrasonic-teeth-cleaning.png" alt="">
       </div>
@@ -117,7 +117,7 @@
       </div>
     </section>
     <section class="card-wraper">
-      <div class="card-1 card">
+      <div class="card-1 card reveal">
         <div class="tittle-card">
           <h2 class="mini-tittle z-above-number">Protetika</h2>
         </div>
@@ -149,7 +149,7 @@
               <a class="no-decoration" href="#kontakt"><button class="button-of-check-list">Zakazi termin</button></a>
             </div>
       </div>
-      <div class="card-1 card">
+      <div class="card-1 card reveal">
         <div class="tittle-card">
           <h2 class="mini-tittle z-above-number ">Konzervativna Stomatologija</h2>
         </div>
@@ -182,7 +182,7 @@
           </div>
         </div>
       </div>
-      <div class="card-1 card">
+      <div class="card-1 card reveal">
         <div class="tittle-card">
           <h2 class="mini-tittle z-above-number">Oralna Hirurgija</h2>
         </div>
@@ -217,7 +217,7 @@
       </div>
     </section>
   </main>
-  <footer>
+  <footer class="reveal">
     <!-- start of footer -->
     <!-- here is just a tittle on top of footer -->
     <section class="under-footer-container"  id="kontakt">
@@ -317,13 +317,14 @@
   </footer>
 
 
-  <!-- Novi SDK link -->
+                        <!-- JavaScrips -->
+
+
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 
 <script type="text/javascript">
-  // INIT EmailJS sa PUBLIC KEY iz dashboard-a
   emailjs.init({ publicKey: "4FrHcttWWMAg0A32b" });
 
   document.getElementById("sendBtn").addEventListener("click", function() {
@@ -337,7 +338,6 @@
       poruka: document.getElementById("poruka").value
     };
 
-    // osnovna validacija
     if (!params.ime || !params.email || !params.poruka) {
       status.innerText = "Molimo popunite ime, email i poruku.";
       return;
@@ -346,7 +346,6 @@
     // slanje email-a
     emailjs.send("service_1gyo6tm", "template_li7ram7", params)
       .then(() => {
-        // status.innerText = "Uspešno poslato!";
         document.getElementById("ime").value = "";
         document.getElementById("prezime").value = "";
         document.getElementById("email").value = "";
@@ -363,6 +362,66 @@
       });
   });
 </script>
+
+<script>
+  const elements = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  (function(){
+    const btn = document.querySelector('.send-button');
+    const wrap = document.querySelector('.send-button-container');
+    const strength = 5; // koliko jako se vuče (px)
+    const radius = 300; // efekt radi unutar ovog radijusa (px)
+
+    wrap.addEventListener('mousemove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      const cx = r.left + r.width/2;
+      const cy = r.top + r.height/2;
+
+      // koordinate kursora relativno na dugme
+      const bx = btn.getBoundingClientRect().left + btn.offsetWidth/2;
+      const by = btn.getBoundingClientRect().top + btn.offsetHeight/2;
+      const dx = e.clientX - bx;
+      const dy = e.clientY - by;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist < radius) {
+        // normalizuj i primeni strength
+        const force = (1 - (dist / radius)) * strength;
+        const tx = (dx / dist) * force || 0;
+        const ty = (dy / dist) * force || 0;
+        btn.style.setProperty('--tx', `${tx}px`);
+        btn.style.setProperty('--ty', `${ty}px`);
+      } else {
+        btn.style.setProperty('--tx', `0px`);
+        btn.style.setProperty('--ty', `0px`);
+      }
+    });
+
+    wrap.addEventListener('mouseleave', () => {
+      btn.style.setProperty('--tx', `0px`);
+      btn.style.setProperty('--ty', `0px`);
+    });
+
+    // za touch uređaje — blagi reset
+    btn.addEventListener('touchstart', () => {
+      btn.style.setProperty('--tx', `0px`);
+      btn.style.setProperty('--ty', `0px`);
+    });
+  })();
+</script>
+
 
 </body>
 </html>
