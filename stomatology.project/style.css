@@ -1013,22 +1013,28 @@ footer {
 
 /* here is fast links and political rights */
 
+.bottom-footer-font-tittle {
+  font-weight: 400;
+}
+
 .bottom-footer {
   background: #00114b3a;
   padding: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
 .fast-links-container {
-  width: fit-content;
+  width: 50%;
   align-items: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
+  /* padding-left: 4rem; */
 }
 
 .bottom-footer-tittle {
@@ -1048,6 +1054,8 @@ footer {
   color: #eeeeee;
   transition: 0.2s;
   white-space: nowrap;
+  font-weight: 250;
+  text-underline-offset: 3px;
 
 }
 .fast-link:hover {
@@ -1064,12 +1072,14 @@ footer {
   width: 100%;
   color:#eeeeee;
   gap: 1rem;
+  font-weight: 350;
 }
 
 .list-container {
   display: flex;
   flex-direction: row;
   gap: 1.7rem;
-  font-size: 0.8rem;
-  padding-left: 15px;
+  font-size: 0.9rem;
+  padding-left: 35px;
+  justify-content: center;
 }

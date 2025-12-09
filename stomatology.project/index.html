@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="button.js">
 </head>
 <body>
   <header>
@@ -217,12 +218,15 @@
     </section>
   </main>
   <footer>
+    <!-- start of footer -->
+    <!-- here is just a tittle on top of footer -->
     <section class="under-footer-container"  id="kontakt">
       <div class="tittle-card">
         <h1 class="family-playfair">Kontaktirajte nas</h1>
         <h2 class="rubik-font">kontakt</h2>
         <h4 class="rubik-font">Zakažite termin ili nas kontaktirajte za više informacija</h4>
       </div>
+      <!-- start of main content in footer or left wrap in it -->
       <section class="footer-main-container">
         <div class="socials-card">
           <div class="socials-tittle">
@@ -251,83 +255,47 @@
             </div>
           </div>
         </div>
-        <!-- <div class="right-wrap">
+        <!-- right wrap its in footer -->
+        <div class="right-wrap">
           <div class="message-tittle">
             <h1>Posaljite nam poruku</h1>
           </div>
-          <div class="message-container">
+          <div class="message-container" id="contactForm">
             <div class="message-card">
-              <div class="input-container"><input class="input-1" type="text" placeholder="Vaše Ime"></div>
+              <div class="input-container">
+                <input id="ime" class="input-1" type="text" placeholder="Vaše Ime" required>
+              </div>
             </div>
             <div class="message-card">
-              <div class="input-container"><input class="input-1" type="text" placeholder="Prezime"></div>
+              <div class="input-container">
+                <input id="prezime" class="input-1" type="text" placeholder="Prezime" required>
+              </div>
             </div>
             <div class="message-card">
-              <div class="input-container"><input class="input-1" type="email" placeholder="Email Adresa"></div>
+              <div class="input-container">
+                <input id="email" class="input-1" type="email" placeholder="Email Adresa" required>
+              </div>
             </div>
             <div class="message-card">
-              <div class="input-container"><input class="input-1" type="text" placeholder="Broj Telefona"></div>
+              <div class="input-container">
+                <input id="telefon" class="input-1" type="text" placeholder="Broj Telefona">
+              </div>
             </div>
             <div class="message-card">
-              <div class="input-container"><textarea class="custom-message-area input-1" placeholder="Poruka"></textarea></div>
+              <div class="input-container">
+                <textarea id="poruka" class="custom-message-area input-1" placeholder="Poruka" required></textarea>
+              </div>
             </div>
           </div>
           <div class="send-button-container">
-            <a href="/"><button type="submit" class="send-button">Posalji poruku</button></a>
+            <button id="sendBtn" class="send-button">Pošalji Poruku</button>
           </div>
-        </div> -->
-        <div class="right-wrap">
-
-  <div class="message-tittle">
-    <h1>Posaljite nam poruku</h1>
-  </div>
-
-  <div class="message-container" id="contactForm">
-
-    <div class="message-card">
-      <div class="input-container">
-        <input id="ime" class="input-1" type="text" placeholder="Vaše Ime" required>
-      </div>
-    </div>
-
-    <div class="message-card">
-      <div class="input-container">
-        <input id="prezime" class="input-1" type="text" placeholder="Prezime" required>
-      </div>
-    </div>
-
-    <div class="message-card">
-      <div class="input-container">
-        <input id="email" class="input-1" type="email" placeholder="Email Adresa" required>
-      </div>
-    </div>
-
-    <div class="message-card">
-      <div class="input-container">
-        <input id="telefon" class="input-1" type="text" placeholder="Broj Telefona">
-      </div>
-    </div>
-
-    <div class="message-card">
-      <div class="input-container">
-        <textarea id="poruka" class="custom-message-area input-1" placeholder="Poruka" required></textarea>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="send-button-container">
-    <button id="sendBtn" class="send-button">Pošalji Poruku</button>
-  </div>
-
-  <div id="status"></div>
-
-</div>
-
+          <div id="status"></div>
+        </div>
       </section>
       <div class="bottom-footer">
         <div class="fast-links-container">
-          <h2 class="bottom-footer-tittle rubik-font">Brzi linkovi</h2>
+          <h2 class="bottom-footer-tittle rubik-font bottom-footer-font-tittle">Brzi linkovi</h2>
           <div class="links-container">
             <a class="fast-link" href="#pocetna">Pocetna</a>
             <a class="fast-link" href="#o-nama">O nama</a>
@@ -336,7 +304,7 @@
           </div>
         </div>
         <div class="rights-container">
-          <h5>© 2025 Stomatologija Marelj. Sva prava zadržana.</h3>
+          <h4 class="rubik-font bottom-footer-font-tittle">© 2025 Stomatologija Marelj. Sva prava zadržana.</h4>
           <div class="list-container">
             <li>Politika privatnosti</li>
             <li>Uslovi korišćenja</li>
