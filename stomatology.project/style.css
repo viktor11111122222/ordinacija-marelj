@@ -8,8 +8,6 @@ html, body {
     overflow-x: hidden;
 }
 
-
-
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -81,10 +79,11 @@ nav::after {
 }
 
 .hero {
+  gap: 5rem;
   position: fixed;
   top: 0;
   left: 0;
-  width: 93.7%;
+  width: 96%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,6 +96,10 @@ nav::after {
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
+}
+
+.wrap-in-hero {
+
 }
 
 .tittle {
