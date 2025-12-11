@@ -1,5 +1,5 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -7,6 +7,7 @@
 html, body {
     overflow-x: hidden;
 }
+
 
 
 html {
@@ -21,6 +22,10 @@ main {
   background-color: #f8f8f8;
   overflow-x: hidden;
   width: 100%;
+}
+
+header {
+  height: 100vh;
 }
 
 /* Navigation bar */
@@ -41,6 +46,7 @@ nav {
 }
 
 nav::before {
+  height: 100%;
   content: "";
   position: absolute;
   inset: 0;
@@ -53,6 +59,7 @@ nav::before {
 }
 
 nav::after {
+  height: 100%;
   content: "";
   position: absolute;
   inset: 0;
@@ -74,7 +81,7 @@ nav::after {
 }
 
 .hero {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 93.7%;
@@ -83,12 +90,19 @@ nav::after {
   align-items: center;
   padding: 2rem;
   top: 0;
-  z-index: 5;
+  z-index: 100;
+  background: rgba(0, 6, 39, 0.15); /* malo beličasto da digne kontrast */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
 .tittle {
   text-shadow: #b4b4b4 0 1px 2px;
   font-size: 1.5rem;
+  color: rgb(235, 248, 255);
 }
 
 .link-container {
@@ -116,9 +130,11 @@ nav::after {
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  height: 80vh;
+  /* height: 80vh; */
+  height: 100%;
   gap: 1rem;
-  padding: 6rem;
+  /* padding: 6rem; */
+  padding-inline: 6rem;
 }
 
 .hero-text-box {
@@ -211,7 +227,8 @@ nav::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
+  /* padding-top: 5rem; */
+  margin-top: 5rem;
   padding-bottom: 2rem;
   font-size: 1.3rem;
   overflow-x: hidden;
@@ -404,10 +421,16 @@ nav::after {
   color: #5d6485;
 }
 
+.one-line {
+  white-space: nowrap;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
 .mini-tittle {
-  color: #2b43ac;
-  text-shadow: rgb(130, 159, 238) 1px 1px 3px;
-  font-weight: 300;
+  color: #162775;
+  text-shadow: rgb(129, 139, 194) 1px 1px 3px;
+  font-weight: 350;
 }
 
 /* card wraper start */
@@ -436,8 +459,19 @@ nav::after {
 
 .tittle-card {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding-block: 1rem;
 }
+
+.tittle-card h2 {
+  color: #416aa0;
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-shadow: 0px 1px 15px #7ea7ff;
+  font-family: 'Rubik', sans-serif;
+}
+
 
 .card-line {
   border-color: #7ea7ff;
@@ -539,7 +573,7 @@ footer {
   overflow-x: hidden;
 }
 
-.tittle-card {
+footer .tittle-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -548,13 +582,17 @@ footer {
   gap: 1rem;
 }
 
-.tittle-card h1,
-.tittle-card h2 {
+footer .tittle-card h1 {
   color: #eeeeee;
   text-shadow: 1px 1px 5px rgb(4, 53, 185);
 }
 
-.tittle-card h1 {
+footer .tittle-card h2{
+  color: #eeeeee;
+  text-shadow: 1px 1px 5px rgb(4, 53, 185);
+}
+
+footer .tittle-card h1 {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 8px;
@@ -562,14 +600,14 @@ footer {
   font-size: 2.4rem;
 }
 
-.tittle-card h4 {
+footer .tittle-card h4 {
   color: #e7e7e7;
   opacity: 0.9;
   font-weight: 350;
   font-size: 0.95rem;
 }
 
-.tittle-card h2 {
+footer .tittle-card h2 {
   color: #e7e7e7;
   font-weight: 400;
   font-size: 1.3rem;
@@ -579,7 +617,7 @@ footer {
 .footer-main-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
   flex: 1;
   padding-block: 3rem;
@@ -589,6 +627,7 @@ footer {
 .socials-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 30%;
   /* width: fit-content; */
   gap: 2rem;
@@ -680,7 +719,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 70%;
+  width: 40%;
+  max-width: 50%;
   margin-inline: 1rem;
   padding: 3rem 4rem;
   padding-bottom: 0;
@@ -905,6 +945,31 @@ footer {
   justify-content: center;
 }
 
+
+/* Scrollbar širina */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Pozadina scrollbara (track) */
+::-webkit-scrollbar-track {
+  background: #10223a; /* pozadina */
+}
+
+/* Deo koji se pomera (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #245ea0; /* boja scrola */
+  border-radius: 10px;
+}
+
+/* Hover efekat */
+::-webkit-scrollbar-thumb:hover {
+  background: #316caf;
+}
+
+
+
+
 /* ======================== */
 /* RESPONSIVE MEDIA QUERIES */
 /* ======================== */
@@ -942,21 +1007,30 @@ footer {
 /* Breakpoint: 768px */
 
 @media (max-width: 768px) {
+
+  .welcome-container {
+    text-align: center;
+  }
+
   .about-us-section {
     display: flex;
     flex-direction: column;
     padding-inline: 2rem;
     gap: 2rem;
+    padding-block: 12rem;
+    margin-top: 2rem;
+    border-radius: 10px;
   }
 
   .about-us-image-container,
   .about-us-text-container {
     width: 100%;
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
   }
-}
+
 
   .about-us-text-container h1 {
     font-size: 1.8rem;
@@ -980,19 +1054,55 @@ footer {
     justify-content: center;
   }
 
+  .socials-card {
+    padding-left: 1.5rem;
+  }
+
   .right-wrap {
     max-width: 45%;
+    padding: 3rem 2.5rem;
+    margin-inline: 2rem;
   }
+
+  .message-tittle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
 
 /* Breakpoint: 475px */
 
 @media (max-width: 475px) {
+
+
+/* Scrollbar širina */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Pozadina scrollbara (track) */
+::-webkit-scrollbar-track {
+  background: #2f3d50; /* pozadina */
+}
+
+/* FIX CODE */
+.right-padding-fix {
+  padding-right: 30px;
+}
+/* FIX CODE */
 
   /* header nav media */
 
   header main {
     width: 100%;
   }
+
+  nav::after {
+    padding-right: 30px;
+  }
+
 
   nav {
     height: 100vh;
@@ -1007,7 +1117,7 @@ footer {
   .hero {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     padding: 1rem;
     gap: 1rem;
@@ -1052,11 +1162,13 @@ footer {
     height: auto;
     padding: 0;
     gap: 0.5rem;
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
-    justify-content: center;
+    height: 100%;
+    /* justify-content: center; */
     display: flex;
     flex-direction: column;
+    padding-inline: 0;
   }
 
   .hero-paragraph {
@@ -1097,7 +1209,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 0;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
   }
 
 
@@ -1148,12 +1260,222 @@ footer {
     padding-left: 1rem;
   }
 
+  /* main our services  */
+
+  .teeth-whitening-text-container {
+  font-weight: 600;
+  font-size: 1.15rem;
+  width: 75%;
+  position: absolute;
+  padding: 1rem;
+  padding-left: 2rem;
+  gap: 1rem;
+  z-index: 4;
+  align-items: center;
+  top: auto;
+  left: 7%;
+  background: rgba(167, 167, 167, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(77, 77, 80, 0.1);
+}
+
+  .paragraph-color {
+    color: #414768;
+}
+
+.teeth-whitening-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+  align-items: center;
+}
+
+  .teeth-whitening-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+  .teeth-whitening-image-container img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    object-fit: cover;
+    object-position: left;
+    filter: contrast(1.1) saturate(1.08) brightness(1);
+    box-shadow: rgb(71, 77, 110) 1px 3px 10px;
+  }
+
+  .ultrasonic-teeth-cleaning-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 2rem; */
+    padding-bottom: 4rem;
+    padding-top: 0;
+    align-items: center;
+  }
+
+  .ultrasoni-teeth-cleaning-image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ultrasoni-teeth-cleaning-image-container img {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    object-fit: cover;
+    object-position: left;
+    filter: contrast(1.1) saturate(1.08) brightness(1);
+    box-shadow: rgb(71, 77, 110) 1px 3px 10px;
+  }
+
+  .ultrasonic-teeth-cleaning-text-container {
+    font-weight: 600;
+    font-size: 1.15rem;
+    width: 75%;
+    position: absolute;
+    padding: 1rem;
+    padding-left: 2rem;
+    gap: 1rem;
+    z-index: 4;
+    align-items: center;
+    top: auto;
+    left: 7%;
+    background: rgba(167, 167, 167, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(77, 77, 80, 0.1);
+  }
+
   /* footer */
 
   .footer-main-container {
     margin-inline: 0;
     padding-inline: 0;
+    padding-top: 1rem;
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: start;
   }
+
+  .socials-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .socials-tittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #eeeeee;
+    text-shadow: 1px 1px 5px rgb(26, 69, 189);
+  }
+
+  .socials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .socials-little-card {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .socials-little-card i {
+    font-size: 1.65rem;
+    color: rgb(11, 48, 148);
+  }
+  .socials-little-card p {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+  }
+
+  .icon-wrap {
+    /* border: 1px solid red; */
+    padding: 0.1rem;
+    border-radius: 10px;
+    background: rgb(142, 177, 255);
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .icon-wrap a {
+    color: rgb(8, 37, 117);
+  }
+
+  .social-media-card {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    font-size: 1.8rem;
+    /* border: 1px solid red; */
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    color: rgb(8, 37, 117);
+  }
+
+  .mail-link {
+    color: #f0f0f0;
+    text-underline-offset: 5px;
+    text-decoration-color: rgb(217, 241, 255);
+    font-size: 1.1rem;
+    transition: 0.1s;
+  }
+
+  .mail-link:hover {
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.35);
+  }
+
+  /* under footer (right side of footer on pc monitor) */
+
+  .right-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 85%;
+    margin-inline: 0rem;
+    padding: 1.5rem 2rem;
+    padding-bottom: 0;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  } 
+
+  /* last footer rights and fast links to disapear */
+
+  .fast-links-container {
+  width: 50%;
+  align-items: center;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
 }
