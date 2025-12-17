@@ -381,6 +381,11 @@ nav::after {
 
 /* constantly in use */
 
+[id] {
+  scroll-margin-top: 80px;
+}
+
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
