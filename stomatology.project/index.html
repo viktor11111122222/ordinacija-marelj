@@ -41,14 +41,16 @@
     <nav>
         <section  id="pocetna" class="z-above hero-text-container reveal">
           <div class="hero-text-box">
-              <h2 style="font-size: 2rem;" class="family-playfair align-left">VREME JE ZA</h2>
-            <h1 style="font-size: 3rem;" class="family-playfair align-left">SAVRSEN OSMEH</h1>
-            <p class="family-playfair hero-paragraph align-left">
-              Naša ordinacija je mesto gde se svaki pacijent oseća
+              <h2 style="font-size: 3rem;" class="family-playfair align-left">VREME JE ZA</h2>
+            <h1 style="font-size: 4rem;" class="family-playfair align-left">SAVRSEN OSMEH</h1>
+            <p class="family-playfair hero-paragraph align-left" style="font-size: 0.85rem;">
+              <!-- Naša ordinacija je mesto gde se svaki pacijent oseća
               dobrodošlo <br> — bez straha i neprijatnosti.  
               Pružamo pažljivu negu za <br> decu i odrasle, uz strpljenje, 
               razumevanje i jasnu komunikaciju. <br> Naš cilj je vaš zdrav osmeh 
-              koji traje ceo život.
+              koji traje ceo život. -->
+              Mesto gde se svaki pacijent oseća sigurno i dobrodošlo,
+              uz pažljivu <br> stomatološku negu i osmeh koji traje ceo život.
             </p>
             <div class="button-cards-container">
               <a class="no-decoration button-container" href="#kontakt"><button class="family-playfair align-left hero-button">Zakaži termin</button></a>
@@ -146,7 +148,7 @@
               </div>
             </section>
           </div>
-            <div class="button-card">
+            <div class="button-card-1">
               <a class="no-decoration" href="#kontakt"><button class="button-of-check-list">Zakazi termin</button></a>
             </div>
       </div>
@@ -178,7 +180,7 @@
               </div>
             </section>
           </div>
-          <div class="button-card">
+          <div class="button-card-2">
             <a class="no-decoration" href="#kontakt"><button class="button-of-check-list">Zakazi termin</button></a>
           </div>
         </div>
@@ -211,17 +213,18 @@
               </div>
             </section>
           </div>
-          <div class="button-card">
+          <div class="button-card-3">
             <a class="no-decoration" href="#kontakt"><button class="button-of-check-list">Zakazi termin</button></a>
           </div>
         </div>
+        
       </div>
     </section>
   </main>
-  <footer class="reveal">
+  <footer class="reveal" id="kontakt">
     <!-- start of footer -->
     <!-- here is just a tittle on top of footer -->
-    <section class="under-footer-container"  id="kontakt">
+    <section class="under-footer-container" >
       <div class="tittle-card">
         <h1 class="family-playfair">Kontaktirajte nas</h1>
         <!-- <h2 class="rubik-font">kontakt</h2> -->
@@ -240,7 +243,7 @@
             </div>
             <div  class="socials-little-card">
               <div class="icon-wrap"><i class="fa-regular fa-envelope"></i></div>
-              <div><a class="mail-link" href="mailto:andjela_marelj@hotmail.com">andjela_marelj@hotmail.com</a></div>
+              <div class="mail-card"><a class="mail-link" href="mailto:andjela_marelj@hotmail.com">andjela_marelj@hotmail.com</a></div>
             </div>
             <div  class="socials-little-card">
               <div class="icon-wrap"><i class="fa-regular fa-map"></i></div>
@@ -290,7 +293,9 @@
           </div>
           <div class="send-button-container">
             <button id="sendBtn" class="send-button">Pošalji Poruku</button>
+            <div id="status" class="status"></div>
           </div>
+          
           <div id="status"></div>
         </div>
       </section>
@@ -304,6 +309,7 @@
             <a class="fast-link" href="#kontakt">Kontakt</a>
           </div>
         </div>
+        <hr class="footer-line">
         <div class="rights-container right-padding-fix">
           <h4 class="rubik-font bottom-footer-font-tittle">© 2025 Stomatologija Marelj. Sva prava zadržana.</h4>
           <div class="list-container">
@@ -328,6 +334,13 @@
 <script type="text/javascript">
   emailjs.init({ publicKey: "4FrHcttWWMAg0A32b" });
 
+  function showStatus(message, type) {
+  const status = document.getElementById("status");
+  status.className = "status " + type + " show";
+  status.innerText = message;
+}
+
+
   document.getElementById("sendBtn").addEventListener("click", function() {
     const status = document.getElementById("status");
 
@@ -340,13 +353,17 @@
     };
 
     if (!params.ime || !params.email || !params.poruka) {
-      status.innerText = "Molimo popunite ime, email i poruku.";
+      showStatus("Molimo popunite ime, email i poruku.", "warning");
       return;
     }
 
     // slanje email-a
     emailjs.send("service_1gyo6tm", "template_li7ram7", params)
       .then(() => {
+
+        showStatus("Poruka je uspešno poslata. Kontaktiraćemo vas uskoro.", "success");
+        // resetovanje forme
+
         document.getElementById("ime").value = params.ime;
         document.getElementById("prezime").value = params.prezime;
         document.getElementById("email").value = params.email;
@@ -356,9 +373,12 @@
       .catch(err => {
         // ako je invalid grant, javlja da reconnectuje Gmail
         if (err && err.text && err.text.includes("Invalid grant")) {
-          status.innerText = "Gmail token je istekao. Molimo reconnect-ujte Gmail nalog u EmailJS dashboard-u.";
+          showStatus(
+            "Gmail token je istekao. Molimo reconnect-ujte Gmail nalog.",
+            "error"
+          );
         } else {
-          status.innerText = "Greška: " + JSON.stringify(err);
+          showStatus("Došlo je do greške. Pokušajte ponovo.", "error");
         }
       });
   });
