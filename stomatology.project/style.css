@@ -612,8 +612,7 @@ nav::after {
 footer {
   /* background: linear-gradient(to bottom right, #3a86ff 0%, #2b43ac 40%, #31459e 50%, #4254a7 60%, #31459e 70%, #504aa5 80%, #665cbd 90%); */
   /* background: linear-gradient(to bottom right, #3a7fff 0%, #3a86ff 40%, #3770cc 50%, #366cc4 60%, #2f62b4 70%, #2253a1 80%, #1f4d97 90%); */
-  background: linear-gradient(to bottom right, #4d6cf5 0%, #364ebd 40%, #2345db 50%, #1d3ab8 60%, #162d9c 70%, #0f2481 80%, #05186d 90%);
-
+  background: linear-gradient(to bottom right, #52198b 0%, #461479 40%, #40116e 50%, #410e74 60%, #3e116b 70%, #2d0950 80%, #21063b 90%);
   /* margin-top: 3rem; */
   min-height: 100vh;
   width: 100%;
