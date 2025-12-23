@@ -10,8 +10,8 @@ html, body {
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  scrollbar-gutter: stable;
+  /* overflow-x: hidden;
+  scrollbar-gutter: stable; */
 }
 
 main {
@@ -616,7 +616,7 @@ nav::after {
 footer {
   /* background: linear-gradient(to bottom right, #3a86ff 0%, #2b43ac 40%, #31459e 50%, #4254a7 60%, #31459e 70%, #504aa5 80%, #665cbd 90%); */
   /* background: linear-gradient(to bottom right, #3a7fff 0%, #3a86ff 40%, #3770cc 50%, #366cc4 60%, #2f62b4 70%, #2253a1 80%, #1f4d97 90%); */
-  background: linear-gradient(to bottom right, #52198b 0%, #461479 40%, #40116e 50%, #410e74 60%, #3e116b 70%, #2d0950 80%, #21063b 90%);
+  background: linear-gradient(to bottom right, #6e4399 0%, #563577 40%, #4f2d70 50%, #3c215a 60%, #341e4e 70%, #29143b 80%, #1e1129 90%);
   /* margin-top: 3rem; */
   min-height: 100vh;
   width: 100%;
@@ -634,12 +634,13 @@ footer .tittle-card {
 
 footer .tittle-card h1 {
   color: #eeeeee;
-  text-shadow: 1px 1px 5px rgb(4, 53, 185);
+  /* text-shadow: 1px 1px 5px rgb(4, 53, 185); */
+  text-shadow: #9864cc 1px 1px 5px;
 }
 
 footer .tittle-card h2{
   color: #eeeeee;
-  text-shadow: 1px 1px 5px rgb(4, 53, 185);
+  text-shadow: 1px 1px 5px #9864cc;
 }
 
 footer .tittle-card h1 {
@@ -661,7 +662,7 @@ footer .tittle-card h2 {
   color: #e7e7e7;
   font-weight: 400;
   font-size: 1.3rem;
-  text-shadow: 1px 1px 5px rgb(21, 64, 184);
+  text-shadow: 1px 1px 5px #9864cc;
 }
 
 .footer-main-container {
@@ -671,7 +672,6 @@ footer .tittle-card h2 {
   width: 100%;
   flex: 1;
   padding-block: 3rem;
-  /* gap: 2rem; */
 }
 
 .socials-card {
@@ -681,17 +681,8 @@ footer .tittle-card h2 {
   width: 30%;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  /* width: fit-content; */
   gap: 2rem;
-  /* border: 1px solid red; */
-  /* padding: 3rem 3rem; */
   padding: 3rem;
-  /* background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1); */
-  /* margin-inline: 1rem; */
 }
 
 .socials-tittle {
@@ -700,7 +691,7 @@ footer .tittle-card h2 {
   align-items: center;
   width: 100%;
   color: #eeeeee;
-  text-shadow: 1px 1px 5px rgb(26, 69, 189);
+  text-shadow: 1px 1px 5px #854ebc;
 }
 
 .socials-container {
@@ -723,7 +714,7 @@ footer .tittle-card h2 {
 
 .socials-little-card i {
   font-size: 2rem;
-  color: rgb(11, 48, 148);
+  color: #31085a;
 }
 .socials-little-card p {
   color: #f0f0f0;
@@ -734,7 +725,9 @@ footer .tittle-card h2 {
   /* border: 1px solid red; */
   padding: 0.4rem;
   border-radius: 10px;
-  background: rgb(142, 177, 255);
+  /* background: rgb(115, 57, 182); */
+  /* background: linear-gradient(to bottom right,#59347d 0%, #452b5f  30%, #9c8eab 40%, ); */
+  background: linear-gradient(to bottom right, #6e4399 0%, #59357c 40%, #58337e 50%, #5a3682 60%, #613d8a 70%, #68408a 80%, #6a408c 90%);
   width: 2.5rem;
   height: 2.5rem;
   align-items: center;
@@ -742,7 +735,7 @@ footer .tittle-card h2 {
   justify-content: center;
 }
 .icon-wrap a {
-  color: rgb(8, 37, 117);
+  color: #31085a;
 }
 
 .social-media-card {
@@ -754,7 +747,7 @@ footer .tittle-card h2 {
   align-items: center;
   justify-content: center;
   width: 100%;
-  color: rgb(8, 37, 117);
+  color: #31085a;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -856,7 +849,7 @@ footer .tittle-card h2 {
   border-radius: 16px;
   transition: 0.2s;
   overflow: hidden;
-  border: 1px solid rgb(134, 167, 216);
+  border: 1px solid #5d308bb6;
 }
 
 .input-1::placeholder {
@@ -865,17 +858,51 @@ footer .tittle-card h2 {
 }
 
 .input-1:hover {
-  box-shadow: 0 4px 15px rgba(29, 62, 155, 0.459);
+  box-shadow: 0 4px 15px rgba(85, 21, 169, 0.459);
 }
 
 .input-1:focus {
   color: white;
   /* box-shadow: 0 4px 25px rgba(22, 60, 165, 0.575); */
-  box-shadow: 0 4px 25px rgba(190, 208, 255, 0.575);
+  box-shadow: 0 4px 25px #67329b79;
   /* border: 1px solid rgb(178, 204, 240); */
-  border: 1px solid rgb(221, 229, 240);
+  border: 1px solid #5d308bb6;
   overflow: hidden;
+  outline: none;
 }
+
+
+/* fix for input when there is remembered text and you put cursor on it */
+
+
+input {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+input:focus {
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.01) inset;
+  -webkit-text-fill-color: #dbe1e6; /* ako ti je tekst beo – promeni */
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+input::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #dbe1e6;
+}
+
+input::-moz-selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #dbe1e6;
+}
+
+
+
 
 .custom-message-area {
   width: 100%;
@@ -913,11 +940,11 @@ footer .tittle-card h2 {
 .send-button {
   width: 100%;
   height: 100%;
-  border: 1px solid rgb(194, 226, 255);
+  border: 1px solid #9864cc;
   border-radius: 20px;
-  color: white;
+  color: rgb(250, 228, 255);
   cursor: pointer;
-  background: #3644c4;
+  background: #59347d;
     --tx: 0px;
     --ty: 0px;
     padding: 18px 36px;
@@ -932,11 +959,12 @@ footer .tittle-card h2 {
 
 .send-button:hover {
   transform: translate(var(--tx), var(--ty)) scale(1.02);
-  box-shadow: 0 18px 40px rgba(12,12,20,0.30);
+  box-shadow: 0 18px 40px rgb(56, 21, 112);
 }
 
 .send-button:active {
-  box-shadow: 0 2px 20px #ffffff;
+  /* box-shadow: 0 2px 20px #ffffff; */
+  box-shadow: #9864cc 0 0 20px;
 }
 
 /* here is fast links and political rights */
@@ -946,7 +974,7 @@ footer .tittle-card h2 {
 }
 
 .bottom-footer {
-  background: #00114b3a;
+  background: #1e0042a4;
   padding: 2.5rem;
   display: flex;
   flex-direction: row;
@@ -967,7 +995,7 @@ footer .tittle-card h2 {
 
 .bottom-footer-tittle {
   color: #dae2e7;
-  text-shadow: 0 1px 5px rgb(33, 103, 194);
+  text-shadow: 0 1px 5px #9864cc;
 }
 
 .links-container {
@@ -989,7 +1017,7 @@ footer .tittle-card h2 {
 .fast-link:hover {
   text-underline-offset: 2px;
   transform: translateY(1px);
-  text-shadow: 0 1px 5px rgba(121, 156, 202, 0.658);
+  text-shadow: 0 1px 5px #9864cc;
 }
 
 .rights-container {
@@ -1012,6 +1040,24 @@ footer .tittle-card h2 {
   justify-content: center;
 }
 
+.to-top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+  .to-top-arrow {
+  font-size: 1.2rem;
+  color: #eeeeee;
+  transition: 0.3s;
+  border: 1px solid #4e2b66;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #442661;
+}
+
 .footer-line {
   display: none;
 }
@@ -1020,26 +1066,22 @@ footer .tittle-card h2 {
 /* Scrollbar širina */
 ::-webkit-scrollbar {
   width: 10px;
-  z-index: 1000;
 }
 
 /* Pozadina scrollbara (track) */
 ::-webkit-scrollbar-track {
   background: #10223a; /* pozadina */
-  z-index: 1000;
 }
 
 /* Deo koji se pomera (thumb) */
 ::-webkit-scrollbar-thumb {
   background: #245ea0; /* boja scrola */
   border-radius: 10px;
-  z-index: 1000;
 }
 
 /* Hover efekat */
 ::-webkit-scrollbar-thumb:hover {
   background: #316caf;
-  z-index: 1000;
 }
 
 :focus-visible {
