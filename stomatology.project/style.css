@@ -62,9 +62,10 @@ nav::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(1, 34, 124, 0.65) 0%, white 200%);
+  /* background: linear-gradient(to bottom, rgba(1, 34, 124, 0.65) 0%, white 200%); */
+  background: linear-gradient(to bottom, rgba(15, 0, 148, 0.693) 0%, white 250%);
   z-index: 2;
-  box-shadow: 10px 10px 100px 10px rgba(1, 34, 124);
+  box-shadow: 10px 10px 100px 10px rgba(16, 0, 158, 0.65);
 }
 
 .title-container {
@@ -94,7 +95,7 @@ nav::after {
   padding: 2rem;
   top: 0;
   z-index: 2;
-  background: rgba(0, 6, 39, 0.15); /* malo beličasto da digne kontrast */
+  background: rgba(10, 0, 78, 0.23); /* malo beličasto da digne kontrast */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-bottom-right-radius: 20px;
@@ -189,7 +190,7 @@ nav::after {
 
 .hero-button:hover {
   background-color: white;
-  color: rgb(1, 34, 124);
+  color: rgb(21, 1, 124);
   transform: scale(1.05);
   box-shadow: 0 0 15px white;
 }
@@ -213,7 +214,7 @@ nav::after {
 
 .arrow-container .arrow {
   font-size: 32px;
-  color: rgb(1, 34, 124);
+  color: rgb(15, 1, 124);
   animation: bounce 2s infinite ease;
   opacity: 0.8;
 }
@@ -420,7 +421,7 @@ nav::after {
 
 .h1-shadow-decoration {
   font-family: "Playfair Display", sans-serif;
-  text-shadow: rgb(130, 159, 238) 1px 1px 5px;
+  text-shadow: rgba(66, 29, 186, 0.533) 1px 1px 5px;
 }
 
 .h2-text-decoration {
@@ -430,7 +431,10 @@ nav::after {
 }
 
 .paragraph-color {
-  color: #5d6485;
+  /* color: #5d6485; */
+  color: #281766e2;
+  opacity: 0.9;
+  font-weight: 350;
 }
 
 .one-line {
@@ -440,7 +444,8 @@ nav::after {
 }
 
 .mini-tittle {
-  color: #162775;
+  /* color: #162775; */
+  color: #3e1b9fb9;
   text-shadow: rgb(129, 139, 194) 1px 1px 3px;
   font-weight: 350;
 }
@@ -483,16 +488,16 @@ nav::after {
 }
 
 .tittle-card h2 {
-  color: #416aa0;
+  color: #4f2fa8;
   font-weight: 400;
   font-size: 1.3rem;
-  text-shadow: 0px 1px 15px #7ea7ff;
+  text-shadow: 0px 1px 15px #896ce2;
   font-family: 'Rubik', sans-serif;
 }
 
 
 .card-line {
-  border-color: #7ea7ff;
+  border-color: #4616a7;
   width: 100%;
   z-index: 10;
 }
@@ -506,7 +511,8 @@ nav::after {
 }
 
 .main-paragraph {
-  opacity: 0.8;
+  color: #27185d;
+  opacity: 0.9;
   font-weight: 350;
   padding-block: 1rem;
 }
@@ -527,7 +533,7 @@ nav::after {
 }
 
 .fa-circle-check {
-  color: #2654eb;
+  color: #450ec3;
 }
 
 /* button on same list */
@@ -568,10 +574,34 @@ nav::after {
   border-radius: 5px;
 }
 
-/* .button-card button {
-  height: 2.5rem;
+/* try of purple theme */
+
+.purple-theme-button {
   width: 100%;
-} */
+  background-color: transparent;
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 15px;
+  color: #9864cc;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  box-shadow: 0 0 5px rgb(112, 64, 173);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 450;
+}
+.purple-theme-button:hover {
+  background-color: #7e52b8;
+  color: rgb(237, 237, 237);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgb(152, 100, 204);
+}
+.purple-theme-button:active {
+  box-shadow: 2px 2px 40px #9864cc;
+}
+
+/* try of purple theme */
 
 .button-of-check-list {
   width: 100%;
@@ -722,7 +752,6 @@ footer .tittle-card h2 {
 }
 
 .icon-wrap {
-  /* border: 1px solid red; */
   padding: 0.4rem;
   border-radius: 10px;
   /* background: rgb(115, 57, 182); */
@@ -743,7 +772,6 @@ footer .tittle-card h2 {
   flex-direction: row;
   gap: 4rem;
   font-size: 2.2rem;
-  /* border: 1px solid red; */
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -842,7 +870,6 @@ footer .tittle-card h2 {
   border: 20px;
   width: 100%;
   background-color: transparent;
-  /* border: 1px solid red; */
   z-index: 10;
   outline: none;
   color: rgb(244, 247, 255);
@@ -1070,22 +1097,22 @@ input::-moz-selection {
 
 /* Pozadina scrollbara (track) */
 ::-webkit-scrollbar-track {
-  background: #10223a; /* pozadina */
+  background: #12103a; /* pozadina */
 }
 
 /* Deo koji se pomera (thumb) */
 ::-webkit-scrollbar-thumb {
-  background: #245ea0; /* boja scrola */
+  background: #3724a0; /* boja scrola */
   border-radius: 10px;
 }
 
 /* Hover efekat */
 ::-webkit-scrollbar-thumb:hover {
-  background: #316caf;
+  background: #3137af;
 }
 
 :focus-visible {
-  outline: 2px solid #2e81ff; /* plava ivica */
+  outline: 2px solid #2e3cff; /* plava ivica */
   outline-offset: 2px;         /* malo prostora od elementa */
 }
 
@@ -1246,7 +1273,7 @@ input::-moz-selection {
 
 /* Pozadina scrollbara (track) */
 ::-webkit-scrollbar-track {
-  background: #2f3d50; /* pozadina */
+  background: #352f50; /* pozadina */
 }
 
 /* FIX CODE */
@@ -1444,7 +1471,9 @@ input::-moz-selection {
 }
 
   .paragraph-color {
-    color: #414768;
+  color: #27185d;
+  opacity: 0.9;
+  font-weight: 350;
 }
 
 .teeth-whitening-section {
@@ -1572,10 +1601,8 @@ input::-moz-selection {
   }
 
   .icon-wrap {
-    /* border: 1px solid red; */
     padding: 0.1rem;
     border-radius: 10px;
-    background: rgb(142, 177, 255);
     width: 2.5rem;
     height: 2.5rem;
     align-items: center;
@@ -1591,7 +1618,6 @@ input::-moz-selection {
     flex-direction: row;
     gap: 4rem;
     font-size: 1.8rem;
-    /* border: 1px solid red; */
     align-items: center;
     justify-content: center;
     width: 85%;
@@ -1668,6 +1694,9 @@ input::-moz-selection {
     gap: 2rem;
     padding: 0;
   }
+
+  .to-top-container {
+    margin-block: 0.5rem;
 }
 
 
