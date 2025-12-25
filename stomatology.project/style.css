@@ -103,9 +103,6 @@ nav::after {
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
-.wrap-in-hero {
-
-}
 
 .tittle {
   text-shadow: #b4b4b4 0 1px 2px;
@@ -1697,6 +1694,7 @@ input::-moz-selection {
 
   .to-top-container {
     margin-block: 0.5rem;
+}
 }
 
 
