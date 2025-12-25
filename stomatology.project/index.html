@@ -98,35 +98,59 @@
       </div>
     </section>
     <div class="section-title-card family-rubik" id="nase-usluge">
-      <div>
+      <div class="tittle-minus-moving">
         <h1 class="h1-shadow-decoration">Nase Stomatoloske Usluge</h1>
       </div>
       <!-- <div>
         <h2 class="h2-text-decoration mini-tittle">nase usluge</h2>
       </div> -->
     </div>
-    <section class="teeth-whitening-section family-rubik reveal">
-      <div class="teeth-whitening-text-container">
-        <h2 class="mini-tittle">Profesionalno izbeljivanje za blistav i prirodno svetao osmeh</h2>
-        <p class="paragraph-color">
-          Izbeljivanje u našoj ordinaciji je brzo, sigurno i daje <br> vidljive rezultate već nakon jedne posete. Vaš osmeh <br> postaje odmah svetliji i svežiji.
-        </p>
-      </div>
-      <div class="teeth-whitening-image-container">
-        <img src="public/teeth whitening.png" alt="teeth whitening">
-      </div>
-    </section>
-    <section class="ultrasonic-teeth-cleaning-card reveal">
-      <div class="ultrasoni-teeth-cleaning-image-container">
-        <img src="public/ultrasonic-teeth-cleaning.png" alt="">
-      </div>
-      <div class="ultrasonic-teeth-cleaning-text-container">
-        <h2 class="mini-tittle">Ultrazvučno skidanje kamenca za zdrav i svež osmeh</h2>
-        <p class="paragraph-color">
-          Ultrazvučno čišćenje bezbolno uklanja naslage i kamenac, ostavljajući zube glatkima i čistima. Tretman je brz, efikasan i ključan za zdravlje desni i svež dah.
-        </p>
-      </div>
-    </section>
+    <div class="mobile-carousel-wrapper" style="position: relative; width: 100vw;">
+
+      <div class="mobile-carousel">
+
+            <section class="teeth-whitening-section family-rubik reveal">
+              <div class="teeth-whitening-text-container">
+                <h2 class="mini-tittle">Profesionalno izbeljivanje za blistav i prirodno svetao osmeh</h2>
+                <p class="paragraph-color">
+                  Izbeljivanje u našoj ordinaciji je brzo, sigurno i daje <br>
+                  vidljive rezultate već nakon jedne posete. Vaš osmeh <br>
+                  postaje odmah svetliji i svežiji.
+                  <dah class="disasper-on-phone paragraph-color">
+                    Dok redovan tretman  pomaže u očuvanju prirodne bele boje zuba i zdravlja
+                    desni.
+                  </dah>
+                </p>
+              </div>
+              <div class="teeth-whitening-image-container">
+                <img src="public/teeth whitening.png" alt="teeth whitening">
+              </div>
+            </section>
+
+            <section class="ultrasonic-teeth-cleaning-card reveal">
+              <div class="ultrasoni-teeth-cleaning-image-container">
+                <img src="public/ultrasonic-teeth-cleaning.png" alt="">
+              </div>
+              <div class="ultrasonic-teeth-cleaning-text-container">
+                <h2 class="mini-tittle">Ultrazvučno skidanje kamenca za zdrav i svež osmeh</h2>
+                <p class="paragraph-color">
+                  Ultrazvučno čišćenje bezbolno uklanja naslage i kamenac, <br>
+                  ostavljajući zube glatkima i čistima. Tretman je brz, efikasan <br>
+                  i ključan za zdravlje desni i svež 
+                  <dah class="disasper-on-phone">
+                    efikasan i ključan za zdravlje desni i svež dah, a redovnim čišćenjem 
+                    smanjujete rizik od karijesa i upala desni, održavajući osmeh zdravim 
+                    i blistavim.
+                  </dah>
+                </p>
+              </div>
+            </section>
+          </div>
+                      <!-- dugmad -->
+            <button class="carousel-btn prev">‹</button>
+            <button class="carousel-btn next">›</button>
+                      <!-- dugmad kraj -->
+    </div>
     <section class="card-wraper">
       <div class="card-1 card reveal">
         <div class="tittle-card">
@@ -479,6 +503,41 @@
       behavior: "smooth"
     });
   });
+</script>
+
+
+<!-- carousel -->
+
+<script>
+
+  if (window.innerWidth <= 600) {
+  const carousel = document.querySelector('.mobile-carousel');
+  const slides = carousel.querySelectorAll('section');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const slideWidth = slides[0].offsetWidth; // prava širina slide-a
+    carousel.scrollTo({
+      left: currentIndex * slideWidth,
+      behavior: 'smooth'
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length; // loop
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length; // loop
+    updateCarousel();
+  });
+}
+
+
 </script>
 
 

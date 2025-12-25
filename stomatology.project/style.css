@@ -62,7 +62,6 @@ nav::after {
   content: "";
   position: absolute;
   inset: 0;
-  /* background: linear-gradient(to bottom, rgba(1, 34, 124, 0.65) 0%, white 200%); */
   background: linear-gradient(to bottom, rgba(15, 0, 148, 0.693) 0%, white 250%);
   z-index: 2;
   box-shadow: 10px 10px 100px 10px rgba(16, 0, 158, 0.65);
@@ -86,9 +85,6 @@ nav::after {
   top: 0;
   left: 0;
   width: 96%;
-  /* width: calc(96% - 2rem); */
-  /* margin-right: px; */
-  /* width: 100vw; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,7 +96,6 @@ nav::after {
   -webkit-backdrop-filter: blur(15px);
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  /* border: 1px solid rgba(255, 255, 255, 0.25); */
 }
 
 
@@ -320,6 +315,7 @@ nav::after {
   flex-direction: column;
   padding-left: 2rem;
   gap: 1rem;
+  padding-right: 3rem;
 }
 
 .teeth-whitening-section {
@@ -329,6 +325,10 @@ nav::after {
   /* padding: 2rem; */
   padding-block: 5rem;
   align-items: center;
+}
+
+.teeth-whitening-text-container br {
+  display: none;
 }
 
 .teeth-whitening-image-container {
@@ -345,6 +345,10 @@ nav::after {
   filter: contrast(1.1) saturate(1.08) brightness(1);
   box-shadow: rgb(71, 77, 110) 1px 3px 10px;
 }
+
+  .dot-mobile {
+    display: none;
+  }
 
 /* ultrasonic-teeth-cleaning */
 
@@ -375,8 +379,17 @@ nav::after {
   width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: end;
   padding-inline: 2rem;
   gap: 1rem;
+}
+
+.ultrasonic-teeth-cleaning-text-container p {
+  text-align: start;
+}
+
+.ultrasonic-teeth-cleaning-text-container br {
+  display: none;
 }
 
 
@@ -1448,11 +1461,11 @@ input::-moz-selection {
 
   /* main our services  */
 
-  .teeth-whitening-text-container {
+  /* .teeth-whitening-text-container {
   font-weight: 600;
   font-size: 1.15rem;
-  width: 75%;
-  position: absolute;
+  max-width: 100%;
+  position: none;
   padding: 1rem;
   padding-left: 2rem;
   gap: 1rem;
@@ -1475,7 +1488,7 @@ input::-moz-selection {
 
 .teeth-whitening-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding-bottom: 3rem;
   padding-top: 2rem;
@@ -1500,9 +1513,8 @@ input::-moz-selection {
 
   .ultrasonic-teeth-cleaning-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    /* padding: 2rem; */
     padding-bottom: 4rem;
     padding-top: 0;
     align-items: center;
@@ -1541,7 +1553,145 @@ input::-moz-selection {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(77, 77, 80, 0.1);
+  } */
+
+  .disasper-on-phone {
+    display: none;
   }
+
+  .tittle-minus-moving h1 {
+    margin-bottom: -5rem;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* wrapper za carousel i dugmad */
+  .mobile-carousel-wrapper {
+    position: relative;
+    width: 100vw;
+  }
+
+  /* scrollable carousel */
+  .mobile-carousel {
+    overflow-x: hidden;    /* horizontalno scroll blokirano za prst */
+    overflow-y: hidden;    /* vertikalni scroll unutar carousel-a blokiran */
+    touch-action: pan-x;   /* dozvoljava horizontalni scroll preko JS-a, blokira vertikalni swipe */
+    -ms-overflow-style: none; /* sakriva scrollbar u IE/Edge */
+    scrollbar-width: none;    /* sakriva scrollbar u Firefox */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* smooth scroll na iOS */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(242, 240, 245);
+    margin-bottom: 2rem;
+  }
+
+  /* svaki slide */
+  .mobile-carousel > section {
+    overflow-x: hidden;       /* blokira horizontalni scroll */
+    touch-action: pan-y;      /* dozvoljava vertikalni scroll */
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;    /* Firefox */
+    min-width: 100vh;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    box-sizing: border-box; /* padding ne širi slide */
+    padding-inline: 1rem;   /* unutrašnji padding */
+  }
+
+  .mobile-carousel::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari, Opera */
+}
+
+  br {
+    display: none;
+  }
+
+  /* layout u kolonu */
+  .teeth-whitening-section,
+  .ultrasonic-teeth-cleaning-card {
+    flex-direction: column;
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+  }
+
+  /* slike proporcionalne i centrirane */
+  .teeth-whitening-image-container,
+  .ultrasoni-teeth-cleaning-image-container,
+  .ultrasonic-teeth-cleaning-text-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* max-width: 300px; */
+  }
+
+  .teeth-whitening-section {
+    padding-top: 3rem;
+  }
+
+  .teeth-whitening-image-container img,
+  .ultrasoni-teeth-cleaning-image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    margin: 1rem 3rem;
+  }
+
+  /* tekst prelama */
+  .teeth-whitening-text-container,
+  .ultrasonic-teeth-cleaning-text-container {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    padding: 0;
+    margin: 0;
+    max-width: 300px;
+    margin: 1rem 3rem;
+  }
+
+  .teeth-whitening-text-container p,
+  .ultrasonic-teeth-cleaning-text-container p {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+
+  /* dugmad fiksirana unutar wrappera */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+
 
   /* footer */
 
@@ -1676,7 +1826,7 @@ input::-moz-selection {
   padding: 0;
 }
 
-.footer-line {
+  .footer-line {
     display: block;
     border-color: #4341d1;
     width: 100%;
@@ -1694,7 +1844,13 @@ input::-moz-selection {
 
   .to-top-container {
     margin-block: 0.5rem;
+  }
 }
+
+@media (min-width: 769px) {
+  .carousel-btn {
+    display: none;
+  }
 }
 
 
